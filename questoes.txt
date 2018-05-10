@@ -1,0 +1,41 @@
+3 - (a) A filosofia de desenvolvimento Mobile First consiste no planejamento arquitetural do projeto primeiramente voltado para os dispositivos móveis e depois para os desktops. Esse tipo de abordagem impacta na implementação do HTML, CSS e Javascript já que os componentes desenvolvidos devem levar em conta o tamanho da tela dos dispositivos móveis.
+
+(b)Não, pois o elemento está visível para o desktop, mas não para dispositivos com telas menores. Esse problema pode ser resolvido ao checar o tamanho 
+
+
+4 - """(a) O problema no N+1 acontece quando é necessário buscar todos os objetos relacionados através de chave estrangeira a uma determinada entidade. 
+Por exemplo ao buscar todas as Disciplinas de um determinado Departamento, o ORM, vai fazer uma query para retornar todas as Disciplinas e em seguida outra query para buscar todos os Departamentos relacionados aquela Disciplina.
+Existem meios de contornar, ao fazer uma única query que retorna toda esse informação.
+
+(b)Ocorreria o problema ao buscar todos os Users e os Pastes relacionados a cada um. Através do Django é possível contornar o problema utilizando o método select_related. Por exemplo: """
+
+Paste.objects.select_related('user').all()
+
+5 - class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  is_adult() {
+    return this.age >= 18;
+  }
+}
+
+const people = [new Person('Joao', 21), new Person('Maria', 20), new Person('Ze', 8)];
+
+var adults;
+
+for (i in array){
+  if(array[i].is_adult()) {
+    adults.push(array[i]);
+}
+
+var sum = 0;
+
+for(x in adults) {
+  sum += adults[x].age;
+}
+
+var mean_age = sum/ adults.length()
+
+<Paste>
